@@ -27,7 +27,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ folder }) => {
     if (imagesData && imagesData[folder]) {
       const folderData = imagesData[folder];
       setFolderData(folderData);
-      // Set default images to the first subfolder if available
       if (folderData.images.length > 0) {
         const firstSubFolder = folderData.images[0];
         handleSubFolderClick(firstSubFolder);
