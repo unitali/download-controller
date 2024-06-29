@@ -23,7 +23,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ folder }) => {
   const [folderData, setFolderData] = useState<ImageFolder | null>(null);
 
   useEffect(() => {
-    const imagesData = getImages as unknown as GetImages;
+    const imagesData: GetImages = getImages as GetImages;
     if (imagesData && imagesData[folder]) {
       const folderData = imagesData[folder];
       setFolderData(folderData);
