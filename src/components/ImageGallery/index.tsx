@@ -38,7 +38,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ folder }) => {
   const handleSubFolderClick = (subFolder: SubFolderImages) => {
     const subFolderName = Object.keys(subFolder)[0];
     const imagesPaths = (subFolder[subFolderName] || []).map(
-      (imageName) => `src/assets/${folder}/${subFolderName}/${imageName}`
+      (imageName) => `/assets/${folder}/${subFolderName}/${imageName}`
     );
     setImages(imagesPaths);
     setSelectedSubFolder(subFolderName);
