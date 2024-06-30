@@ -39,6 +39,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ folder }) => {
     }
   }, [folder]);
 
+  useEffect(() => {
+    if (images.length > 0) {
+      navigator.serviceWorker.controller?.postMessage({ type: 'CACHE_IMAGES', images });
+    }
+  }, [images]);
+
   const handleNoSubFolders = (folderData: ImageFolder) => {
     const imagesPaths: string[] = [];
     const subFolder = folderData.images[0];
