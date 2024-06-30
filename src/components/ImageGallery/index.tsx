@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import getImages from "../../assets/getImages.json";
+import getImages from "../../../public/assets/getImages.json";
 
 interface SubFolderImages {
   [key: string]: string[] | undefined;
