@@ -1,5 +1,6 @@
 {
     "01_PACK_ANIMAL": {
+      "subFolder": true,
       "images": [
         {
           "Cachorrinhos": [
@@ -434,6 +435,7 @@
       ]
     },
     "02_PACK_COMIDAS_DIVERTIDAS": {
+      "subFolder": true,
       "images": [
         {
           "PIZZAS": [
@@ -567,6 +569,7 @@
       ]
     },
     "03_PACK_SMILE": {
+      "subFolder": false,
       "images": [
         {
           "03_PACK_SMILE": [
@@ -611,6 +614,7 @@
       ]
     },
     "04_PACK_XICARAS_ANIMADAS": {
+      "subFolder": false,
       "images": [
         {
           "04_PACK_XICARAS_ANIMADAS": [

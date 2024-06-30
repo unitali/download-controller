@@ -6,6 +6,7 @@ interface SubFolderImages {
 }
 
 interface ImageFolder {
+  subFolder: boolean;
   images: SubFolderImages[];
 }
 
@@ -27,7 +28,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ folder }) => {
     if (imagesData && imagesData[folder]) {
       const folderData = imagesData[folder];
       setFolderData(folderData);
-      if (folderData.images.length > 0) {
+      if (folderData.subFolder) {
         const firstSubFolder = folderData.images[0];
         handleSubFolderClick(firstSubFolder);
       } else {
@@ -38,20 +39,20 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ folder }) => {
 
   const handleNoSubFolders = (folderData: ImageFolder) => {
     const imagesPaths: string[] = [];
-    const subFolder = folderData.images[0]; // Assuming there's only one array of images
+    const subFolder = folderData.images[0];
     const subFolderName = Object.keys(subFolder)[0];
     const subFolderImages = subFolder[subFolderName] || [];
     subFolderImages.forEach((imageName) => {
-      imagesPaths.push(`/assets/${folder}/${imageName}`);
+      imagesPaths.push(`/public/assets/${folder}/${imageName}`);
     });
     setImages(imagesPaths);
-    setSelectedSubFolder(null); // Reset selected subfolder since there are no subfolders
+    setSelectedSubFolder(null);
   };
 
   const handleSubFolderClick = (subFolder: SubFolderImages) => {
     const subFolderName = Object.keys(subFolder)[0];
     const imagesPaths = (subFolder[subFolderName] || []).map(
-      (imageName) => `/assets/${folder}/${subFolderName}/${imageName}`
+      (imageName) => `/public/assets/${folder}/${subFolderName}/${imageName}`
     );
     setImages(imagesPaths);
     setSelectedSubFolder(subFolderName);
