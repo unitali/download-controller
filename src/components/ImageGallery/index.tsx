@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getImages from "../../../public/assets/getImages.json";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 interface SubFolderImages {
   [key: string]: string[] | undefined;
@@ -111,9 +113,14 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ folder }) => {
               className="col-md-3 mb-3"
               style={{ maxWidth: '150px' }}>
               <div className="card d-flex justify-content-center align-items-center">
-                <img className="card-img-top"
+                <LazyLoadImage
+                  className="card-img-top"
                   src={image}
-                  alt={`Image ${index + 1}`} />
+                  alt={`Image ${index + 1}`}
+                  effect="blur"
+                  width="100%"
+                  height="auto"
+                />
                 <div className="card-body">
                   <button className="btn btn-primary"
                     onClick={() => handleDownload(image)}>
