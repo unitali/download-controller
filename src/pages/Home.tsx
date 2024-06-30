@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FolderList from '../components/FolderList';
 import ImageGallery from '../components/ImageGallery';
-import foldersData from "../../public/assets/getImages.json";
+import foldersData from "../assets/getImages.json";
 
 const Home: React.FC = () => {
     const [selectedFolder, setSelectedFolder] = useState<string | null>(null);
